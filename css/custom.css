@@ -1,0 +1,24 @@
+/* 自定义头图透明效果 */
+:root {
+  /* 调整遮罩透明度 - 数值越小越透明 */
+  --mark-bg: rgba(244, 217, 217, 0.5); /* 默认是0.3，这里改为0.2使其更透明 */
+}
+
+/* 如果想要更透明的效果，可以使用以下值 */
+/* --mark-bg: rgba(0, 0, 0, 0.1); /* 非常透明 */
+/* --mark-bg: rgba(0, 0, 0, 0.4); /* 较不透明 */
+
+/* 可以为暗黑模式设置不同的透明度 */
+[data-theme="dark"] {
+  --mark-bg: rgba(245, 236, 236, 0.5); /* 暗黑模式下稍微不透明一些 */
+}
+
+/* 另一种方法：直接控制页面头部的透明度 */
+#page-header:not(.not-top-img)::before {
+  background-color: rgba(179, 211, 236, 0.5) !important; /* 直接设置透明度 */
+}
+
+/* 如果你想要彩色遮罩效果，可以使用 */
+/* #page-header:not(.not-top-img)::before {
+  background: linear-gradient(45deg, rgba(73, 177, 245, 0.3), rgba(0, 196, 182, 0.3)) !important;
+} */
